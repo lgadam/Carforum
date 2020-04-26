@@ -8,8 +8,9 @@ if(!array_key_exists('P', $_GET) || empty($_GET['P']))
 
 if($_GET['G'] == 'user') {
 	switch ($_GET['P']) {
-		case 'login': require_once PROTECTED_DIR.'user/login.php'; break;
-		case 'register': require_once PROTECTED_DIR.'user/register.php'; break;
+		case 'login': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/login.php' : header('Location: index.php'); break;
+		case 'register': !IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/register.php' : header('Location: index.php'); break;
+		case 'logout': IsUserLoggedIn() ? UserLogout() : header('Location: index.php'); break;
 		default: require_once PROTECTED_DIR.'global/404.php'; break;
 	}
 } else {
@@ -18,5 +19,6 @@ if($_GET['G'] == 'user') {
 		default: require_once PROTECTED_DIR.'global/404.php'; break;
 	}
 }
+
 
 ?>

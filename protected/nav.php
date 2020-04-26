@@ -5,12 +5,18 @@
       <li class="nav-item">
         <a class="nav-link" href="index.php">Főoldal</a>
       </li>
+    <?php if(!IsUserLoggedIn()) :?>
       <li class="nav-item">
         <a class="nav-link" href="index.php?G=user&P=login">Bejelentkezés</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="index.php?G=user&P=register">Regisztráció</a>
-      </li>    
+      </li>
+    <?php else :?>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?G=user&P=logout">Kijelentkezés</a>
+      </li>
+    <?php endif ;?>   
     </ul>
   </div>  
 </nav>
