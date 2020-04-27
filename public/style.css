@@ -2,7 +2,17 @@ body
 {
 	background-color:#b3b3b3;
 }
-h1
+.home
 {
+	color:#333333;
+	background-color: white;
 	text-align: center;
+	width: 900px;
+}
+.profile
+{
+	color:white;
+	background-color: #737373;
+	text-align: center;
+	width: 900px;
 }

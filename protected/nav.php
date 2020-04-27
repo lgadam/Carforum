@@ -14,6 +14,15 @@
       </li>
     <?php else :?>
       <li class="nav-item">
+        <a class="nav-link" href="index.php?G=user&P=profile">Profil</a>
+      </li>
+      <?php if(isset($_SESSION['permission']) && $_SESSION['permission'] >= 1) : ?>
+  <a class="navbar-brand" href="#">&nbsp;|&nbsp;Admin panel</a>
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?G=user&P=user_list">Felhasználók</a>
+      </li>  
+      <?php endif ;?>
+      <li class="nav-item">
         <a class="nav-link" href="index.php?G=user&P=logout">Kijelentkezés</a>
       </li>
     <?php endif ;?>   

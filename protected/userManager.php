@@ -13,7 +13,7 @@ function UserLogout()
 }
 function UserLogin($email, $password) 
 {
-	$query = "SELECT id, first_name, last_name, email FROM users WHERE email = :email AND password = :password";
+	$query = "SELECT id, first_name, last_name, email, permission FROM users WHERE email = :email AND password = :password";
 	$params = 
 	[
 		':email' => $email,
@@ -25,9 +25,10 @@ function UserLogin($email, $password)
 	if(!empty($record)) 
 	{
 		$_SESSION['uid'] = $record['id'];
-		$_SESSION['f_name'] = $record['first_name'];
-		$_SESSION['l_name'] = $record['last_name'];
+		$_SESSION['fname'] = $record['first_name'];
+		$_SESSION['lname'] = $record['last_name'];
 		$_SESSION['email'] = $record['email'];
+		$_SESSION['permission'] = $record['permission'];
 
 		header('Location: index.php');
 	}
