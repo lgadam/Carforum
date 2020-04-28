@@ -14,7 +14,11 @@
 		if(empty($postData['title']) || empty($postData['content'])) 
 		{
 			echo "Hiányzó adatok";
-		}else 
+		}else if(strlen($postData['content']) > 1024) 
+		{
+		echo "A tartalom nem lehet hosszabb mint 1024 karakter";
+		}
+		else 
 		{
 			$query = "INSERT INTO news (title, content, cargroup, creator) VALUES (:title, :content, :cargroup, :creator)";
 			$params = [

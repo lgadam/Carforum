@@ -13,22 +13,22 @@
 
 		if(empty($postData['fname']) || empty($postData['lname']) || empty($postData['email']) || empty($postData['email1']) || empty($postData['password']) || empty($postData['password1'])) 
 		{
-			echo "Egyik mező üres! Ellenőrizd az adatokat";
+			echo "<p style='color:red;'>hiányzó adat</p>";
 		} else if($postData['email'] != $postData['email1']) 
 		{
-			echo "Nem egyező emailcím!";
+			echo "<p style='color:red;'>Nem egyező email cím</p>";
 		} else if(!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) 
 		{
-			echo "Hibás email formátum!";
+			echo "<p style='color:red;'>Hibás email formátum</p>";
 		} else if ($postData['password'] != $postData['password1']) 
 		{
-			echo "A jelszavak nem egyeznek!";
+			echo "<p style='color:red;'>Nem egyező jelszó</p>";
 		} else if(strlen($postData['password']) < 8) 
 		{
-			echo "A jelszónak legalább 8 karakter hosszúságúnak kell hogy legyen!";
+			echo "<p style='color:red;'>A jelszónak hoszabbnak kell hogy legyen mint 8 karakter</p>";
 		} else if(!UserRegister($postData['email'], $postData['password'], $postData['fname'], $postData['lname'])) 
 		{
-			echo "Sikertelen regisztráció!";
+			echo "<p style='color:red;'>Sikertelen regisztráció</p>";
 		}
 		$postData['password'] = $postData['password1'] = "";
 	}

@@ -8,13 +8,13 @@
 		];
 		if (empty($postData['email']) || empty($postData['password'])) 
 		{
-			echo "hiányzó adatok! ellenőrizd az adatbevitelt";
+			echo "<p style='color:red;'>hiányzó adat! ellenőrizd az adatbevitelt</p>";
 		} else if (!filter_var($postData['email'], FILTER_VALIDATE_EMAIL)) 
 		{
-    		echo "Hibás email formátum!";
+    		echo "<p style='color:red;'>hibás emailcím formátum!</p>";
   		} else if(!UserLogin($postData['email'], $postData['password'])) 
   		{
-    		echo "Hibás email cím vagy jelszó!";
+    		echo "<p style='color:red;'>hibás email cím vagy jelszó</p>";
   		}
   		$postData['password'] = "";
 	}

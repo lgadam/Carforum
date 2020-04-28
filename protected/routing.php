@@ -9,6 +9,7 @@ switch ($_GET['P'])
 
 	case 'news': IsUserLoggedIn() ? require_once PROTECTED_DIR.'news/news.php' : header('Location: index.php'); break; //news
 	case 'add_content': IsUserLoggedIn() ? require_once PROTECTED_DIR.'news/addcontent.php' : header('Location: index.php'); break;
+	case 'content': IsUserLoggedIn() ? require_once PROTECTED_DIR.'news/content.php' : header('Location: index.php'); break;
 
 	case 'profile': IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/profile.php' : header('Location: index.php'); break; //user
 	case 'user_list': IsUserLoggedIn() ? require_once PROTECTED_DIR.'user/user_list.php' : header('Location: index.php'); break;
