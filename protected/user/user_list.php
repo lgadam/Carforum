@@ -9,7 +9,7 @@
 	<?php if(count($users) <= 0) : ?>
 		<h1>Az adatbázisban nem található felhasználó</h1>
 	<?php else : ?>
-		<table class="table table-striped">
+		<table class="table table-striped bg-white">
 			<thead>
 				<tr>
 					<th scope="col">Id</th>

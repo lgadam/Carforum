@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="<?=PUBLIC_DIR.'style.css' ?>">
 	
 </head>
-<body>
+<body class="background">
 	<div class="container-fluid">
 		<header><?php include_once PROTECTED_DIR.'header.php'; ?></header>
 		<nav style="margin-bottom: 32px"><?php require_once PROTECTED_DIR.'nav.php'; ?></nav>

@@ -1,6 +1,14 @@
 body
 {
-	background-color:#b3b3b3;
+	background-color:color:#333333; 
+}
+.background
+{
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .home
 {
@@ -8,11 +16,31 @@ body
 	background-color: white;
 	text-align: center;
 	width: 900px;
+	position: center;
 }
 .profile
 {
 	color:white;
-	background-color: #737373;
+	background-color: #595959;
 	text-align: center;
 	width: 900px;
+}
+.news
+{
+	color:#333333;
+	background-color: white;
+	text-align: center;
+	width: 900px;
+}
+.footer
+{
+	color:white;
+}
+.background2
+{
+	background-color:#595959;
+}
+.background3
+{
+	background-color:#333333;
 }

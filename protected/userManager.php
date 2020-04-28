@@ -51,7 +51,7 @@ function UserRegister($email, $password, $fname, $lname)
 			':email' => $email,
 			':password' => sha1($password)
 		];
-		if(executeDML($query, $params)) header('Location: index.php?G=user&P=login');
+		if(executeDML($query, $params)) header('Location: index.php?P=login');
 	} 
 	return false;
 }

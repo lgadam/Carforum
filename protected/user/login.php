@@ -19,15 +19,17 @@
   		$postData['password'] = "";
 	}
 ?>
-  <h1><center>Bejelentkezés</center></h1>
+<div class="background2">
+  <h1 class="footer"><center>Bejelentkezés</center></h1>
   <form method="post">
     <div class="form-group">
-      <label for="Email1">Email</label>
+      <label for="Email1" class="footer">Email</label>
       <input type="email" class="form-control" id="Email1" name="email" value="<?=isset($postData) ? $postData['email'] : "";?>">
     </div>
     <div class="form-group">
-      <label for="Password1">Jelszó</label>
+      <label for="Password1" class="footer">Jelszó</label>
       <input type="password" class="form-control" id="Password1" name="password" value="">
     </div>
     <button type="submit" class="btn btn-primary bg-dark" name="login">Bejelentkezés</button>
   </form>
+</div>

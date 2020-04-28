@@ -34,41 +34,42 @@
 	}
 ?>
 
-<h1 style="margin-bottom: 16px"><center>Regisztráció</center></h1>
 
 <form method="post">
+<div class="background2">
+	<h1 class="footer"style="margin-bottom: 16px"><center>Regisztráció</center></h1>
 	<div class="form-row">
 		<div class="form-group col-md-6">
-			<label for="registerFirstName">Keresztnév</label>
+			<label for="registerFirstName" class="footer">Keresztnév</label>
 			<input type="text" class="form-control" id="registerFirstName" name="first_name" value="<?=isset($postData) ? $postData['fname'] : "";?>">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="registerLastName">Vezetéknév</label>
+			<label for="registerLastName" class="footer">Vezetéknév</label>
 			<input type="text" class="form-control" id="registerLastName" name="last_name" value="<?=isset($postData) ? $postData['lname'] : "";?>">
 		</div>
 	</div>
 
 	<div class="form-row">
 		<div class="form-group col-md-6">
-			<label for="registerEmail">Email</label>
+			<label for="registerEmail" class="footer">Email</label>
 			<input type="email" class="form-control" id="registerEmail" name="email" value="<?=isset($postData) ? $postData['email'] : "";?>">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="registerEmail1">Email megerősítése</label>
+			<label for="registerEmail1" class="footer">Email megerősítése</label>
 			<input type="email" class="form-control" id="registerEmail1" name="email1" value="<?=isset($postData) ? $postData['email1'] : "";?>">
 		</div>
 	</div>
 
 	<div class="form-row">
 		<div class="form-group col-md-6">
-			<label for="registerPassword">Jelszó</label>
+			<label for="registerPassword" class="footer">Jelszó</label>
 			<input type="password" class="form-control" id="registerPassword" name="password" value="">
 		</div>
 		<div class="form-group col-md-6">
-			<label for="registerPassword1">Jelszó megerősítése</label>
+			<label for="registerPassword1" class="footer">Jelszó megerősítése</label>
 			<input type="password" class="form-control" id="registerPassword1" name="password1" value="">
 		</div>
 	</div>
-
+</div>
 	<button type="submit" class="btn btn-primary bg-dark" name="register">Regisztráció</button>
 </form>
