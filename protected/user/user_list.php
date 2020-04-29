@@ -2,7 +2,19 @@
 	<h1>Az oldal nem elérhető</h1>
 <?php else : ?>
 	<?php 
-	$query = "SELECT first_name, last_name, email, permission FROM users";
+	if(array_key_exists('d', $_GET) && !empty($_GET['d']) && $_GET['d'] != $_SESSION['uid']) // saját felhasználóját nem törölheti ki
+	{
+	 	$query = "DELETE FROM users WHERE id = :id";
+		$params = [':id' => $_GET['d']];
+		require_once DATABASE_CONTROLLER;
+		if(!executeDML($query, $params)) 
+		{
+			echo "Hiba törlés közben!";
+		}	
+	}
+ 	?>
+	<?php 
+	$query = "SELECT id, first_name, last_name, email, permission FROM users ORDER BY permission DESC";
 	require_once DATABASE_CONTROLLER;
 	$users = getList($query);
 	?>
@@ -30,7 +42,7 @@
 						<td><?=$u['last_name'] ?></td>
 						<td><?=$u['email'] ?></td>
 						<td><?=$u['permission'] ?></td>
-						<td><a href="#">Törlés</a></td>
+						<td><a href="index.php?P=user_list&d=<?=$u['id'] ?>">Törlés</a></td>
 					</tr>
 				<?php endforeach;?>
 			</tbody>
